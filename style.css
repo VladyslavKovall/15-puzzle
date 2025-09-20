@@ -1,0 +1,78 @@
+:root{
+    --size: 320px; 
+    --tile-size: calc(var(--size) / 4);
+    --gap: 6px;
+  }
+  body{
+    font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    min-height:100vh;
+    background: linear-gradient(180deg,#eef2ff,#ffffff);
+    margin:0;
+  }
+  .wrap{
+    width: min(420px, 92vw);
+    text-align:center;
+  }
+  h1{ margin: 0 0 12px; font-size:20px; }
+  .controls{
+    display:flex;
+    gap:8px;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:12px;
+  }
+  .stats{ font-size:14px; color:#333; }
+  .btn{
+    background:#3b82f6;
+    color:white;
+    border:none;
+    padding:8px 12px;
+    border-radius:8px;
+    cursor:pointer;
+    font-weight:600;
+  }
+  .btn.secondary{ background:#f3f4f6; color:#111; box-shadow: none; }
+  #board{
+    width:var(--size);
+    height:var(--size);
+    margin: 0 auto;
+    display:grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--gap);
+    background: transparent;
+    touch-action: manipulation;
+  }
+  .tile{
+    user-select:none;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:20px;
+    font-weight:700;
+    border-radius:10px;
+    background: linear-gradient(180deg,#1b58d1,#2c6fe4);
+    box-shadow: 0 6px 12px rgba(59,130,246,0.12);
+    transition: transform 180ms ease, background 180ms, box-shadow 180ms;
+    cursor: pointer;
+  }
+  .tile.empty{
+    background: transparent;
+    box-shadow: none;
+    cursor: default;
+  }
+  .tile:active{ transform: scale(0.98); }
+  .won-banner{
+    margin-top:12px;
+    background: linear-gradient(90deg,#bbf7d0,#a7f3d0);
+    padding:10px;
+    border-radius:8px;
+    font-weight:700;
+  }
+
+  @media (max-width:420px){
+    :root{ --size: 92vw; }
+    .tile{ font-size: calc(3.5vw + 8px); }
+  }

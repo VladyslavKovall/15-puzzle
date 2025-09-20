@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>П'ятнашки — 15 Puzzle</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="wrap">
+    <h1>П'ятнашки — 15 Puzzle</h1>
+
+    <div class="controls">
+      <div class="stats">
+        Ходи: <span id="moves">0</span> • Час: <span id="time">00:00</span>
+      </div>
+      <div>
+        <button class="btn" id="shuffleBtn">Тасувати</button>
+        <button class="btn secondary" id="resetBtn">Скинути</button>
+      </div>
+    </div>
+
+    <div id="board" aria-label="П'ятнашки"></div>
+
+    <div id="message" style="height:42px; margin-top:12px;"></div>
+  </div>
+
+<script src="main.js"></script>
+</body>
+</html>
